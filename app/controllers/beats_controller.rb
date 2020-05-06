@@ -1,18 +1,24 @@
 class BeatsController < ApplicationController
     
-    def index
-        beats = Beat.all
+  def index
+      @beats = Beat.all
+      render json: @beats
+  end
 
-        render json: beats
-    end
+  def show
+      @beat = Beat.find(params[:id])
+      render json: @beat
+  end
 
-    def show
-        beat = Beat.find(params[:id])
+  def create
+      @beat = Beat.create(beat_params)
+      render json: @beat
+  end
 
-        render json: beat
-    end
+  private
 
-    def create
-        
-    end
+  def beat_params
+      params.require(:beat).permit(:name, :bpm, :drumObjs)
+  end
+
 end

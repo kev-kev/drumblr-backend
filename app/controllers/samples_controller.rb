@@ -1,15 +1,15 @@
 class SamplesController < ApplicationController
 
-    def index
-        samples = Sample.all
+  def index
+      samples = Sample.all
 
-        render json: samples
-    end
+      render json: samples
+  end
 
-    def show
-        sample = Sample.find(params[:id])
+  def show
+      sample = Sample.find(params[:id])
 
-        render json: sample
-    end
+      render json: sample
+  end
 
 end

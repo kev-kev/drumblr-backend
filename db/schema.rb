@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_195609) do
+ActiveRecord::Schema.define(version: 2020_05_06_160354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,17 +18,27 @@ ActiveRecord::Schema.define(version: 2020_05_01_195609) do
   create_table "beats", force: :cascade do |t|
     t.string "name"
     t.integer "bpm"
-    t.integer "sequence"
+    t.string "drumObjs"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "sample_beats", force: :cascade do |t|
-    t.integer "beat_id"
-    t.integer "sample_id"
+  create_table "samplebeats", force: :cascade do |t|
+    t.bigint "beat_id", null: false
+    t.bigint "sample_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["beat_id"], name: "index_samplebeats_on_beat_id"
+    t.index ["sample_id"], name: "index_samplebeats_on_sample_id"
   end
 
   create_table "samples", force: :cascade do |t|
     t.string "name"
-    t.integer "api_id"
+    t.string "api_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "samplebeats", "beats"
+  add_foreign_key "samplebeats", "samples"
 end
