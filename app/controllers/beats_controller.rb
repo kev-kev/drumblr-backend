@@ -19,11 +19,17 @@ class BeatsController < ApplicationController
         params.require(:beat).permit(
             :name, 
             :bpm, 
-            drumObjs: [
-                :id,
-                :name,
-                isPlaying: []
-            ])
+            :sample1,
+            :sample2,
+            :sample3,
+            :sample4,
+            :tracks => []
+            # drumObjs: [
+            #     :id,
+            #     :name,
+            #     isPlaying: []
+            # ]
+        )
     end
 
 end
