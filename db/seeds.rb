@@ -6,20 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-beat1 = Beat.create(name: "Seed Beat 1", bpm: 120, drumObjs: "[{
-  id: 3, 
-  name: 'Bass Drum', 
-  isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-}, {
-  id: 22, 
-  name: 'Hand Clap', 
-  isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-}, {
-  id: 26, 
-  name: 'Snare', 
-  isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-},{
-id: 35, 
-name: 'Closed Hi-hat', 
-isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-}]")
+beat1 = Beat.create(name: "Seed Beat 1", bpm: 120, sample1: 3, sample2: 22, sample3: 26, sample4: 35)
+  
+track1 = Track.create("0": false, "1": false, "2": false, "3": true, "4": false, "5": false, "6": false, "7": true, "8": false, "9": false, "10": false, "11": true, "12": false, "13": false, "14": false, "15": true)
+track2 = Track.create("0": false, "1": true, "2": true, "3": true, "4": false, "5": true, "6": true, "7": true, "8": false, "9": true, "10": true, "11": true, "12": false, "13": false, "14": false, "15": true)
+track3 = Track.create("0": false, "1": true, "2": true, "3": true, "4": false, "5": true, "6": true, "7": true, "8": false, "9": true, "10": true, "11": true, "12": false, "13": false, "14": false, "15": true)
+track4 = Track.create("0": false, "1": true, "2": true, "3": true, "4": false, "5": true, "6": true, "7": true, "8": false, "9": true, "10": true, "11": true, "12": false, "13": false, "14": false, "15": true)
+
+joiner1 = BeatTracks.create(beat_id: 1, track_id: 1)
+joiner2 = BeatTracks.create(beat_id: 1, track_id: 2)
+joiner3 = BeatTracks.create(beat_id: 1, track_id: 3)
+joiner4 = BeatTracks.create(beat_id: 1, track_id: 4)

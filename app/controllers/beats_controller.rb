@@ -1,16 +1,17 @@
 class BeatsController < ApplicationController
     
     def index
-        @beats = Beat.all
-        render json: @beats
+        beats = Beat.all
+        render json: beats
     end 
     def show
-        @beat = Beat.find(params[:id])
-        render json: @beat
+        beat = Beat.find(params[:id])
+        render json: beat
     end 
     def create
-        @beat = Beat.create(beat_params)
-        render json: @beat
+            beat = Beat.create(name: params[:name], bpm: params[:bpm], sample1: params[:sample1], sample2: params[:sample2], sample3: params[:sample3], sample4: params[:sample4])
+            params[:tracks].each{|track| Joiner.create(beat_id: beat.id, track_id: track[:id])}
+            render json: beat
     end 
 
     private
@@ -23,7 +24,6 @@ class BeatsController < ApplicationController
             :sample2,
             :sample3,
             :sample4,
-            :tracks => []
             # drumObjs: [
             #     :id,
             #     :name,
