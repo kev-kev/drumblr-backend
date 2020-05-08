@@ -10,13 +10,11 @@ class BeatsController < ApplicationController
         render json: beat
     end 
     def create
-
         @beat = Beat.create(beat_params)
         @beat.tracks = params.require(:beat)["tracks"]
         @beat.save!
         render json: @beat
-
-    end 
+    end
 
     private
 
