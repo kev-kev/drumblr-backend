@@ -1,3 +1,4 @@
+
 class BeatsController < ApplicationController
     
     def index
@@ -10,6 +11,8 @@ class BeatsController < ApplicationController
     end 
     def create
         @beat = Beat.create(beat_params)
+        @beat.tracks = params.require(:beat)["tracks"]
+        @beat.save!
         render json: @beat
     end 
 
@@ -24,11 +27,6 @@ class BeatsController < ApplicationController
             :sample3,
             :sample4,
             :tracks => []
-            # drumObjs: [
-            #     :id,
-            #     :name,
-            #     isPlaying: []
-            # ]
         )
     end
 

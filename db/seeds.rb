@@ -6,20 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-beat1 = Beat.create(name: "Seed Beat 1", bpm: 120, drumObjs: "[{
-  id: 3, 
-  name: 'Bass Drum', 
-  isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-}, {
-  id: 22, 
-  name: 'Hand Clap', 
-  isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-}, {
-  id: 26, 
-  name: 'Snare', 
-  isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-},{
-id: 35, 
-name: 'Closed Hi-hat', 
-isPlaying: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
-}]")
+Beat.create(
+  bpm: 100, 
+  name: "seedbeat waddupppp", 
+  sample1: 3, 
+  sample2: 22, 
+  sample3: 26, 
+  sample4: 35, 
+  tracks: [
+    [true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+    [true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+    [true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],
+    [true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+  ]
+
+)
