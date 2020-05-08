@@ -2,18 +2,20 @@
 class BeatsController < ApplicationController
     
     def index
-        @beats = Beat.all
-        render json: @beats
+        beats = Beat.all
+        render json: beats
     end 
     def show
-        @beat = Beat.find(params[:id])
-        render json: @beat
+        beat = Beat.find(params[:id])
+        render json: beat
     end 
     def create
+
         @beat = Beat.create(beat_params)
         @beat.tracks = params.require(:beat)["tracks"]
         @beat.save!
         render json: @beat
+
     end 
 
     private
@@ -29,5 +31,6 @@ class BeatsController < ApplicationController
             :tracks => []
         )
     end
+
 
 end
