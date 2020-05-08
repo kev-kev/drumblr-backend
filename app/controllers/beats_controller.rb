@@ -26,9 +26,19 @@ class BeatsController < ApplicationController
             :sample2,
             :sample3,
             :sample4,
+<<<<<<< HEAD
             :tracks => []
         )
     end
 
+=======
+            # drumObjs: [
+            #     :id,
+            #     :name,
+            #     isPlaying: []
+            # ]
+        )
+    end
+>>>>>>> parent of 1d5054f... building create function in beat controller
 
 end
