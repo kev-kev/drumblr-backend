@@ -11,7 +11,7 @@ Check out the frontend code here: https://github.com/kev-kev/drumblr-frontend
 To use: 
 
 ```// clone backend first
-$ git clone git@github.com:christopherleja/drumblr_backend.git
+$ git clone git@github.com:kev-kev/drumblr-backend.git
 
 // cd into backend folder
 $ cd drumblr_backend
@@ -20,7 +20,7 @@ $ cd drumblr_backend
 $ bundle && rails s
 
 // clone this repository
-$ git clone git@github.com:christopherleja/drumblr_frontend.git 
+$ git clone git@github.com:kev-kev/drumblr-frontend.git 
 
 // cd into the repository
 $ cd drumblr_frontend
@@ -28,5 +28,5 @@ $ cd drumblr_frontend
 // install dependencies and run the app
 $ npm install && npm start
 ```
-© 2020 - Created by Christopher Leja, Kevin Clark and Ryan Seit
+© 2020 - Created by Kevin Clark, Christopher Leja, and Ryan Seit
 
